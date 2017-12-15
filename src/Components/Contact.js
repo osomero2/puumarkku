@@ -3,6 +3,7 @@ import PhoneIcon from 'material-ui/svg-icons/communication/phone';
 import EmailIcon from 'material-ui/svg-icons/communication/email';
 import AddressIcon from 'material-ui/svg-icons/action/room';
 import PersonIcon from 'material-ui/svg-icons/action/face';
+import TimeIcon from 'material-ui/svg-icons/device/access-time';
 
 class Contact extends React.Component {
     constructor(props) {
@@ -57,6 +58,15 @@ class Contact extends React.Component {
               </div>
               <div style={{display: 'inline-block', paddingLeft: '15px'}}>
                 <span style={{color: 'white'}}>Karjasillantie 16, 28240, Pori</span>
+              </div>
+            </div>
+
+            <div style={{width: '100%', paddingTop: '30px'}}>
+              <div style={{display: 'inline-block'}}>
+                <TimeIcon color="white" style={{position: 'relative', top: '6px'}}/>
+              </div>
+              <div style={{display: 'inline-block', paddingLeft: '15px'}}>
+                <span style={{color: 'white'}}>Avoinna sopimuksen mukaan</span>
               </div>
             </div>
 

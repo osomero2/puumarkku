@@ -16,6 +16,7 @@ export class Application extends React.Component {
         this.state = {
           open: false,
           background: true,
+          firstScene: true,
           screenWidth: window.innerWidth,
         };
 
@@ -24,6 +25,7 @@ export class Application extends React.Component {
 
     componentDidMount() {
       window.addEventListener("scroll", this.handleScroll);
+      this.handleScroll();
     }
 
     componentDidUpdate() {
@@ -36,8 +38,18 @@ export class Application extends React.Component {
 
       if (Y > windowHeight) {
         this.setState({background: false})
-      } else {
+        this.setState({firstScene: true})
+      } else if (Y < windowHeight){
         this.setState({background: true})
+        this.setState({firstScene: false})
+      }
+    }
+
+    handleOverlayStyle() {
+      if (this.state.background === true) {
+        return 'menuBGFadeIn menuBG'
+      } else {
+        return 'menuBGFadeIn menuBG semiTrans'
       }
     }
 
@@ -45,7 +57,14 @@ export class Application extends React.Component {
     }
 
     handleToggle() {
+      let Y = window.pageYOffset;
+      let windowHeight = window.innerHeight;
+      windowHeight = windowHeight - 80;
+
       this.setState({open: !this.state.open})
+      if (this.state.open === true && Y > windowHeight) {
+        this.setState({background: false})
+      }
     }
 
     getIcon() {
@@ -61,13 +80,13 @@ export class Application extends React.Component {
         return (
           <div>
               <Drawer
-              containerStyle={{backgroundColor: 'transparent' , marginTop: '60px'}}
+              containerStyle={{marginTop: '60px', backgroundColor: this.state.firstScene ? 'rgba(0, 0, 0, .9)' : 'rgba(0, 0, 0, .025)'}}
               zDepth={0}
               docked={false}
               width={this.state.screenWidth}
               open={this.state.open}
               onRequestChange={(open) => this.setState({open})}
-              overlayStyle={{marginTop: '60px', backgroundColor: 'rgba(0, 0, 0, .9)'}}
+              overlayStyle={this.handleOverlayStyle()}
               >
               <div style={{width: '100%', marginTop: '30px'}}>
                 <Contact/>
@@ -75,7 +94,7 @@ export class Application extends React.Component {
             </Drawer>
 
           <Menu
-          backgroundColor={this.state.background ? 'menuBGFadeIn menuBG' : 'menuBGFadeIn menuBG semiTrans'}
+          backgroundColor={this.handleOverlayStyle()}
           collideId='header'
           onClick={() => this.handleToggle()}
           icon={this.getIcon()}

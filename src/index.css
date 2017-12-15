@@ -2,7 +2,12 @@
   src:  url('https://fonts.googleapis.com/css?family=Spectral+SC');
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
+  width: 100vw;
   margin: 0;
   padding: 0;
   font-family: logoFont, sans-serif !important;
@@ -33,10 +38,10 @@ span {
 }
 
 .menuBGFadeIn {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 .logoText {
