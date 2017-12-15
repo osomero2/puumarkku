@@ -67,6 +67,7 @@ export class Application extends React.Component {
               width={this.state.screenWidth}
               open={this.state.open}
               onRequestChange={(open) => this.setState({open})}
+              overlayStyle={{marginTop: '60px', backgroundColor: 'rgba(0, 0, 0, .9)'}}
               >
               <div style={{width: '100%', marginTop: '30px'}}>
                 <Contact/>
