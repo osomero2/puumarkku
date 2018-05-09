@@ -1,9 +1,10 @@
 {
   "main.css": "static/css/main.36dddbce.css",
   "main.css.map": "static/css/main.36dddbce.css.map",
-  "main.js": "static/js/main.3f74b8eb.js",
-  "main.js.map": "static/js/main.3f74b8eb.js.map",
-  "static/media/markku.jpg": "static/media/markku.025d34d1.jpg",
-  "static/media/markku_close.jpg": "static/media/markku_close.d6fd72ae.jpg",
-  "static/media/sauna1.jpg": "static/media/sauna1.6db33a25.jpg"
+  "main.js": "static/js/main.66f053ff.js",
+  "main.js.map": "static/js/main.66f053ff.js.map",
+  "static/media/facebook.jpg": "static/media/facebook.03b32c04.jpg",
+  "static/media/instagram.jpg": "static/media/instagram.51c68f1a.jpg",
+  "static/media/markku.jpg": "static/media/markku.26551170.jpg",
+  "static/media/sauna1.jpg": "static/media/sauna1.4e9fc84f.jpg"
 }
